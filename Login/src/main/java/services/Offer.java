@@ -1,6 +1,7 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -8,6 +9,7 @@ import javax.persistence.OneToMany;
 import java.util.*;
 @Entity
 public class Offer {
+	@Id
 	private String offerId;
 	private String courseId;
 	private String progId;
