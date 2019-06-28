@@ -1,0 +1,36 @@
+package services;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import java.util.*;
+@Entity
+public class Batch {
+	private String batch;
+	private String progId;
+	private String schemeId;
+	@ManyToOne
+	private Scheme scheme;
+	@OneToMany
+	private List<Program> program = new ArrayList<>();
+	public String getBatch() {
+		return batch;
+	}
+	public void setBatch(String batch) {
+		this.batch = batch;
+	}
+	public String getProgId() {
+		return progId;
+	}
+	public void setProgId(String progId) {
+		this.progId = progId;
+	}
+	public String getSchemeId() {
+		return schemeId;
+	}
+	public void setSchemeId(String schemeId) {
+		this.schemeId = schemeId;
+	}
+	
+}
