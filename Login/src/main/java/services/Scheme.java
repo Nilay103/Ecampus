@@ -8,6 +8,7 @@ import javax.persistence.OneToOne;
 import java.util.*;
 @Entity
 public class Scheme {
+	
 	private String schemeID;
 	private String minCPI;
 	private String minCredits;

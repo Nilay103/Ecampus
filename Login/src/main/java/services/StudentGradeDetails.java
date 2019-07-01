@@ -1,28 +1,23 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
+import CompositeKey.*;
 @Entity
 public class StudentGradeDetails {
-	private String studentId;
-	private String termId;
+	StudentGradeDetailsKey studentGradeDetailsKey;
 	private String CPI;
 	private String SPI;
 	@ManyToOne
 	private Term term;
-	public String getStudentId() {
-		return studentId;
+	@Id
+	public StudentGradeDetailsKey getStudentGradeDetailsKey() {
+		return studentGradeDetailsKey;
 	}
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
-	public String getTermId() {
-		return termId;
-	}
-	public void setTermId(String termId) {
-		this.termId = termId;
+	public void setStudentGradeDetailsKey(StudentGradeDetailsKey studentGradeDetailsKey) {
+		this.studentGradeDetailsKey = studentGradeDetailsKey;
 	}
 	public String getCPI() {
 		return CPI;

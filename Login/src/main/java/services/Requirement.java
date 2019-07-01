@@ -1,33 +1,31 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import CompositeKey.RequirementKey;
 
 import java.util.*;
 
 @Entity
 public class Requirement {
-	private String schemeId;
-	private String categoryId;
+	RequirementKey requirementKey;
+	
 	private String minCredit;
 	private String numOfCourse;
 	@ManyToOne
 	private Scheme scheme;
 	@ManyToOne
 	private CourseCategory courseCategory;
-	public String getSchemeId() {
-		return schemeId;
+	@Id
+	public RequirementKey getRequirementKey() {
+		return requirementKey;
 	}
-	public void setSchemeId(String schemeId) {
-		this.schemeId = schemeId;
-	}
-	public String getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
+	public void setRequirementKey(RequirementKey requirementKey) {
+		this.requirementKey = requirementKey;
 	}
 	public String getMinCredit() {
 		return minCredit;

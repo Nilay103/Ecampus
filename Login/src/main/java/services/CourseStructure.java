@@ -1,30 +1,28 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import CompositeKey.CourseStructureKey;
 
 import java.util.*;
 @Entity
 public class CourseStructure {
-	private String schemeId;
-	private String courseCode;
+	
+	CourseStructureKey coureseStructureKey;
 	private String termId;
 	@ManyToMany 
 	private List<Scheme> scheme = new ArrayList<Scheme>();
 	@OneToMany
 	private List<Course> course = new ArrayList<>();
-	public String getSchemeId() {
-		return schemeId;
+	@Id
+	public CourseStructureKey getCoureseStructureKey() {
+		return coureseStructureKey;
 	}
-	public void setSchemeId(String schemeId) {
-		this.schemeId = schemeId;
-	}
-	public String getCourseCode() {
-		return courseCode;
-	}
-	public void setCourseCode(String courseCode) {
-		this.courseCode = courseCode;
+	public void setCoureseStructureKey(CourseStructureKey coureseStructureKey) {
+		this.coureseStructureKey = coureseStructureKey;
 	}
 	public String getTermId() {
 		return termId;

@@ -1,11 +1,13 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Degree {
 	private String studentId;
+	@Id
 	private String degCardNo;
 	private String issueDate;
 	private String transcriptionNum;

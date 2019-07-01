@@ -1,12 +1,14 @@
 package services;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import CompositeKey.*;
 import javax.persistence.ManyToMany;
 import java.util.*;
 @Entity
 public class Registration {
-	private String studentId;
-	private String offerId;
+	Registration registration;
 	private String auditable;
 	private String grade;
 	private String dateOfReg;
@@ -16,18 +18,14 @@ public class Registration {
 	private List<Student> student = new ArrayList<>();
 	@ManyToMany
 	private List<Offer> offer = new ArrayList<>();
-	public String getStudentId() {
-		return studentId;
+	@Id
+	public Registration getRegistration() {
+		return registration;
 	}
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
+	public void setRegistration(Registration registration) {
+		this.registration = registration;
 	}
-	public String getOfferId() {
-		return offerId;
-	}
-	public void setOfferId(String offerId) {
-		this.offerId = offerId;
-	}
+	
 	public String getAuditable() {
 		return auditable;
 	}

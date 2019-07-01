@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 	public class Student {
@@ -18,11 +19,13 @@ import javax.persistence.OneToMany;
 		private String last_Name;
 		private String contactNum;
 		private String emailId;
+		
 		@ManyToMany
 		private List<Registration> registrations = new ArrayList<>();
 		@OneToMany
 		private List<GradeModification> grademodification = new ArrayList<>();
-		
+		@OneToOne
+		private Degree degree;
 		public int getsId() {
 			return sId;
 		}
